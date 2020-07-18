@@ -1,30 +1,47 @@
 import React from "react";
-import Api from "../../API";
+import Api /*{ApiFetch} */ from "../../API";
 import "./CharactersList.css";
+import Character from "../Character";
 
 export default class CharactersList extends React.Component {
-  // const items = arr.map( (el)=>{
-  //         return (
-  //             <li></li>
-  //         )
-  //     }
-  // )
+  state = {
+    characters: [],
+  };
 
   rickMortyApi = new Api();
 
-  componentDidMount(){
-    // const charactersArr = this.rickMortyApi.getAllCharacters()
-    //         .then((data) => data);
+  // rickMortyApi = new ApiFetch();
 
-    // console.log(charactersArr);
-      
+  componentDidMount() {
+    this.rickMortyApi.getAllCharacters().then((data) =>
+      this.setState({
+        characters: data,
+      })
+    );
   }
 
   render() {
+    const { characters } = this.state;
+    const items = characters.map((el) => {
+      console.log(el);
+      return (
+        <li key={el.id}>
+          <Character
+            name={el.name}
+            gender={el.gender}
+            species={el.species}
+            status={el.status}
+            img={el.image}
+            currentLocation={el.location.name}
+            firstEpisodeUrl={el.episode[0]}
+          />
+        </li>
+      );
+    });
     return (
       <div className="CharactersList">
         <h1>Characters</h1>
-        <ul>{}</ul>
+        <ul>{items}</ul>
       </div>
     );
   }
