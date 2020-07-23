@@ -15,7 +15,6 @@ export default class Api {
                 return result;
         }
 
-
         getCharacter = async (id) => {
                 const response = await this.instance.get(`character/${id}`);
                 const result = response.data;

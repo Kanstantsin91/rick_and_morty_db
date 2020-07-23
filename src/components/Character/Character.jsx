@@ -1,12 +1,14 @@
 import React from "react";
 import "./Character.css";
 import Api from "../../API";
+import { Link } from "react-router-dom";
 
 export default class Character extends React.Component {
   rickMortyApi = new Api();
 
   state = {
     firstEpisodeUrl: null,
+    id: 14
   };
 
   componentDidMount() {
@@ -31,7 +33,9 @@ export default class Character extends React.Component {
         </div>
         <div className="textBlock">
           <div className="TitleBlock">
-            <p className="name">{name}</p>
+            <p className="name">
+              <Link to={`character/${this.state.id}`}>{name}</Link>
+            </p>
             <p className="status">
               <span className={statusCircleClass}></span>
               <span className="statusText">{status}</span>
