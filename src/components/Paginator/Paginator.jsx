@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setCharactersThunk } from "../../actions/setCharectersAction";
+import { setCharactersThunk, setLocationsThunk } from "../../actions/actions";
 import './Paginator.css';
 
 const Paginator = (props) => {
@@ -11,15 +11,16 @@ const Paginator = (props) => {
       pageCount,
       getNextPage,
       getPrevPage,
+      flag
     } = props; 
     return (
       <div className="Paginator">
         {prevPageUrl && (
-          <button onClick={() =>{ getPrevPage(prevPageUrl) }}>prevBtn</button>
+          <button onClick={() =>{ getPrevPage(prevPageUrl, flag) }}>Prev</button>
         )}
         <span>{currentPage} of {pageCount}</span>
         {nextPageUrl && (
-          <button onClick={() => getNextPage(nextPageUrl)}>nextBtn</button>
+          <button onClick={() => getNextPage(nextPageUrl, flag)}>Next</button>
         )}
       </div>
     );
@@ -33,8 +34,8 @@ const Paginator = (props) => {
   });
   
   const mapDispatchToProps = (dispatch) => ({
-    getNextPage: (nextPageUrl) => dispatch(setCharactersThunk(nextPageUrl)),
-    getPrevPage: (prevPageUrl) => dispatch(setCharactersThunk(prevPageUrl)),
+    getNextPage: (nextPageUrl, flag) => { if(flag === 'locations'){dispatch(setLocationsThunk(nextPageUrl))} else dispatch(setCharactersThunk(nextPageUrl))},
+    getPrevPage: (prevPageUrl, flag) => { if(flag === 'locations'){dispatch(setLocationsThunk(prevPageUrl))} else dispatch(setCharactersThunk(prevPageUrl))},
   });
   
   export default connect(mapStateToProps, mapDispatchToProps)(Paginator);

@@ -1,0 +1,18 @@
+.Location {
+    display: flex;
+    align-items: center;
+}
+
+.Location img {
+    margin-right: 7px;
+}
+
+.Location a{
+    text-decoration: none;
+    color: orange;
+}
+
+.Location a:hover {
+    color: black;
+}
+

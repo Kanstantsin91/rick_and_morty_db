@@ -20,6 +20,7 @@ class CharactersList extends React.Component {
                         species={item.species}
                         gender={item.gender}
                         currentLocation={item.location.name}
+                        currentLocationUrl = {item.location.url}
                         firstEpisodeUrl={item.episode[0]}
                         firstEpisodeName={item.firstEpisodeName}
                         id={item.id}

@@ -1,0 +1,40 @@
+.CharacterPageContent{
+    display: flex;
+    justify-content: center;
+}
+
+.CharacterPageContent div{
+    max-width: max-content;
+}
+
+.CharacterPageContent h1{
+    text-align: center;
+}
+
+.CharacterPageContent img{
+    padding: 5px;
+    background-color: orange;
+    margin-bottom: 10px;
+}
+
+.CharacterPageContent span{
+    color: orange;
+    font-size: 14px;
+}
+
+.CharacterPageContent div {
+    font-size: 20px;
+}
+
+.CharacterPageContent a{
+    text-decoration: none;
+    color: black;
+}
+
+.CharacterPageContent a:hover{
+    color: orange;
+}
+
+.CharacterPageContent h2{
+    font-size: 45px;
+}

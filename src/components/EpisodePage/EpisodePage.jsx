@@ -37,7 +37,7 @@ const EpisodePage = () => {
     <div
       className="EpisodePage"
     >
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <div><span>Episode: </span>{episode}</div>
       <div><span>Air date: </span>{airDate}</div>
       <div><span>Characters in episode:</span></div>

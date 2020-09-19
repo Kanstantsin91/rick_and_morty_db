@@ -1,0 +1,12 @@
+.LocationList ul {
+    list-style: none;
+    column-count: 2;
+    column-gap: 150px;
+}
+
+.LocationList {
+    display: flex;
+    justify-content: center;
+}
+
+

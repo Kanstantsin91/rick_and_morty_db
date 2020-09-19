@@ -22,6 +22,12 @@ export default class Api {
         return result;
     }
 
+    getLocationsInfoByPage = async (pageNumber = null) => {
+        const response = pageNumber ? await this.instance.get(`location/?page=${pageNumber}`) : await this.instance.get('location');
+        const result = response.data;
+        return result;
+    }
+
     // getAllCharacters = async () => {
     //     const response = await this.instance.get('character');
     //     const result = response.data.results;
@@ -36,6 +42,12 @@ export default class Api {
 
     getEpisode = async (id) => {
         const response = await this.instance.get(`episode/${id}`);
+        const result = response.data;
+        return result;
+    }
+
+    getLocation = async (id) => {
+        const response = await this.instance.get(`location/${id}`);
         const result = response.data;
         return result;
     }

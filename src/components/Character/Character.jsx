@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 export default class Character extends React.Component {
 
     render() {
-        const { name, img, status, species,
-            gender, currentLocation, firstEpisodeName, id } = this.props;
+        const { name, img, status, currentLocation, firstEpisodeName, id, firstEpisodeUrl, currentLocationUrl} = this.props;
 
         let statusCircleClass = 'statusCircle';
+        let episodeId = Number(firstEpisodeUrl.slice(firstEpisodeUrl.lastIndexOf('/')+1));
+        let locationId = Number(currentLocationUrl.slice(currentLocationUrl.lastIndexOf('/')+1));
     
         if (status === 'Alive') {
             statusCircleClass += ' alive';
@@ -31,19 +32,16 @@ export default class Character extends React.Component {
                         </p>
                         <p className="status">
                             <span className={statusCircleClass}></span>
-                            <span className="statusText">{status}</span>
-                            <span>-</span>
-                            <span className="species">{species}</span>
-                            <span className="gender">{gender}</span>
+                            <span className="statusText"> {status}</span>
                         </p>
                     </div>
                     <div className="locationBlock">
-                        <p className="title">Current location</p>
-                        <p className="location">{currentLocation}</p>
+                        <p className="title">Current location:</p>
+                        <p className="location"><Link to ={`location/${locationId}`}>{currentLocation}</Link></p>
                     </div>
                     <div className="firstSeenBlock">
                         <p className="title">First seen in:</p>
-                        <p className="firstEpisode">{firstEpisodeName}</p>
+                        <p className="firstEpisode"><Link to ={`episode/${episodeId}`}>{firstEpisodeName}</Link></p>
                     </div>
                 </div>
                 

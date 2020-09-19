@@ -18,7 +18,7 @@
   width: 120px;
   height: 60px;
   border-radius: 120px 120px 0 0;
-  background: #f8b26a;
+  background: orange;
   animation: ldio-tcvt25kbfcd-1 1s linear infinite;
   transform-origin: 60px 60px
 }
@@ -43,7 +43,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #e15b64;
+  background: black;
   animation: ldio-tcvt25kbfcd-3 1s linear infinite
 }
 .ldio-tcvt25kbfcd > div:nth-child(1) div:nth-child(1) { animation-delay: -0.67s }
@@ -52,7 +52,7 @@
 .loadingio-spinner-bean-eater-ljplsej3j6 {
   width: 200px;
   height: 200px;
-  display: inline-block;
+  display: block;
   overflow: hidden;
   background: transparent;
 }
@@ -65,3 +65,10 @@
   transform-origin: 0 0; /* see note above */
 }
 .ldio-tcvt25kbfcd div { box-sizing: content-box; }
+
+.Spinner {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

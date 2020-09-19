@@ -6,4 +6,19 @@
 
 .Paginator button {
     margin: 0 5px;
+    color: black;
+    font-size: larger;
+    font-family: 'RickMorty';
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.Paginator button:focus {
+    outline: none;
+}
+
+.Paginator button:hover {
+    color: orange;
 }

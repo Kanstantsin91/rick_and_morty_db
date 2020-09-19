@@ -5,7 +5,8 @@ import styles from "./Nav.styles";
 import {
   setCharactersThunk,
   setEpisodesThunk,
-} from "../../actions/setCharectersAction";
+  setLocationsThunk
+} from "../../actions/actions";
 import { connect } from "react-redux";
 
 export let target = null;
@@ -29,7 +30,7 @@ const Nav = (props) => {
       >
         Episodes
       </NavLink>
-      <NavLink activeStyle={{ color: "black" }} to="/locations">
+      <NavLink activeStyle={{ color: "black" }} onClick={() => props.setLocations()}to="/locations">
         Locations
       </NavLink>
     </div>
@@ -39,6 +40,7 @@ const Nav = (props) => {
 const mapDispatchToProps = (dispatch) => ({
   setCharacters: () => dispatch(setCharactersThunk()),
   setEpisodes: () => dispatch(setEpisodesThunk()),
+  setLocations: () => dispatch(setLocationsThunk()),
 });
 
 export default connect(null, mapDispatchToProps)(Nav);

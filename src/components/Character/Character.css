@@ -2,13 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(46, 45, 45);
+    background-color: rgb(92, 90, 90);
     border-radius: 0.5rem;
 }
+
 .imgBlock {
     width: 38%;
     height: 100%;
 }
+
 .imgBlock img {
     width: 100%;
     height: 100%;
@@ -17,30 +19,73 @@
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
+
 .textBlock {
     width: 57%;
-    font-size: 14px
+    font-size: 14px;
 }
 
-.titleBlock a{
-    color: white;
+.textBlock p {
+    margin-bottom: 5px;
+}
+
+.titleBlock a {
+    font-size: x-large;
+    color: orange;
     text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.titleBlock a:hover {
+    color: black;
+}
+
+.titleBlock .status {
+    margin-bottom: 17px;
 }
 
 .statusCircle {
     display: inline-block;
-    width: 9px;
-    height: 9px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background-color: rgb(175, 214, 46);
+    background-color: rgb(148, 150, 142);
 }
+
 .statusCircle.alive {
     background-color: rgb(85, 204, 68);
 }
+
 .statusCircle.dead {
     background-color: rgb(214, 61, 46);
 }
 
 .firstEpisode {
     margin-bottom: 0;
+}
+
+.firstEpisode a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.firstEpisode a:hover {
+    color: orange;
+}
+
+.title {
+    color: rgb(216, 195, 195);
+    margin-bottom: 5px;
+    font-size: x-small;
+}
+
+.Character .location a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Character .location a:hover {
+    color: orange;
 }

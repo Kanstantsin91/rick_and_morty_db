@@ -7,6 +7,8 @@ import EpisodesList from "../EpisodesList";
 import CharacterPage from "../CharacterPage";
 import EpisodePage from "../EpisodePage";
 import StartPage from "../StartPage";
+import LocationList from "../LocationsList/LocationList";
+import LocationPage from "../LocationPage";
 
 const App = () => {
   return (
@@ -19,6 +21,9 @@ const App = () => {
           <Route path="/characters">
             <CharactersList />
           </Route>
+          <Route path="/locations">
+            <LocationList />
+          </Route>
           <Route path="/episodes">
             <EpisodesList />
           </Route>
@@ -27,6 +32,9 @@ const App = () => {
           </Route>
           <Route path={`/episode/:id`}>
             <EpisodePage />
+          </Route>
+          <Route path={`/location/:id`}>
+            <LocationPage/>
           </Route>
         </Switch>
       </div>

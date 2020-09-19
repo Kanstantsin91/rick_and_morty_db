@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 const initialState = {
+  locations:[],
   characters: [],
   episodes: [],
   paginator: {
@@ -25,6 +26,13 @@ function MainReducer(state = initialState, action) {
       return {
         ...state,
         episodes: action.payload.episodes,
+      };
+
+      case "IS_LOCATIONS":
+      return {
+        ...state,
+        locations: action.payload.locations,
+        paginator: action.payload.paginator,
       };
     default:
       return state;

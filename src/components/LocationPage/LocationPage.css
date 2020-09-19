@@ -1,24 +1,21 @@
-.EpisodePage ul {
+.LocationPage ul {
     list-style: none;
     column-count: 4;
 }
 
-.EpisodePage span{
+.LocationPage span{
     color: orange;
 }
 
-.EpisodePage div{
+.LocationPage div{
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.EpisodePage {
+.LocationPage {
     padding: 20px;
 }
 
-.EpisodePage h2{
+.LocationPage h2{
     font-size: 45px;
 }
-
-
-
