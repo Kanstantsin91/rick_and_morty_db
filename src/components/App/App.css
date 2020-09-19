@@ -1,3 +1,15 @@
 .App {
-    background-color: rgb(32, 35, 41);
+    background-color: white;
+    width: 1084px;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    font-family: 'RickMorty';
+}
+.App p {
+    margin-top: 0;
+}
+
+@font-face{
+    font-family: 'RickMorty';
+    src: url(../../fonts/get_schwifty.ttf);
 }

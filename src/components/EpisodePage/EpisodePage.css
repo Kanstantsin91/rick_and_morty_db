@@ -1,0 +1,20 @@
+.EpisodePage ul {
+    list-style: none;
+    column-count: 4;
+}
+
+.EpisodePage span{
+    color: orange;
+}
+
+.EpisodePage div{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.EpisodePage {
+    padding: 20px;
+}
+
+
+

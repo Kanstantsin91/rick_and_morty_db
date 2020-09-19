@@ -1,0 +1,27 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 25px;
+
+}
+.nav_block {
+    display: block;
+}
+.title_block p{
+    font-size: 40px;
+}
+
+.logo_link {
+    text-decoration: none;
+    color: orange;
+}
+
+.logo_link:visited{
+    color: orange;
+}
+
+.logo_link:hover{
+    color: black;
+}
+

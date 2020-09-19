@@ -1,3 +1,3 @@
-import EpisodesList from "./EpisodesList";
+import EpisodesList from './EpisodesList';
 
 export default EpisodesList;

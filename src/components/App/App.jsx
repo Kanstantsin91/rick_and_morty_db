@@ -1,29 +1,36 @@
 import React from "react";
-import Header from "../Header";
-import CharacterPage from "../CharacterPage";
-import CharactersList from "../CharactersList";
-import EpisodesList from "../EpisodesList"
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "../Header";
+import CharactersList from "../CharactersList";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import EpisodesList from "../EpisodesList";
+import CharacterPage from "../CharacterPage";
+import EpisodePage from "../EpisodePage";
+import StartPage from "../StartPage";
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
-        <Header />
+      <Header />
         <Switch>
+          <Route exact path="/"><StartPage/>
+          </Route> 
           <Route path="/characters">
             <CharactersList />
           </Route>
           <Route path="/episodes">
             <EpisodesList />
           </Route>
-          <Route path='/character/:id'>
-            <CharacterPage/>
+          <Route path={`/character/:id`}>
+            <CharacterPage />
+          </Route>
+          <Route path={`/episode/:id`}>
+            <EpisodePage />
           </Route>
         </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 

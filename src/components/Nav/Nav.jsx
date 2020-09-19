@@ -1,15 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import './Nav.css';
+import { NavLink } from "react-router-dom";
+//import './Nav.css';
+import styles from "./Nav.styles";
+import {
+  setCharactersThunk,
+  setEpisodesThunk,
+} from "../../actions/setCharectersAction";
+import { connect } from "react-redux";
 
-const Nav = () => {
+export let target = null;
+
+const Nav = (props) => {
+  const classes = styles();
+
   return (
-    <div className="Nav">
-      <Link to="/characters">Characters</Link>
-      <Link to="/episodes">Episodes</Link>
-      <Link to="/locations">Locations</Link>
+    <div className={`Nav ${classes.Nav}`}>
+      <NavLink
+        activeStyle={{ color: "black" }}
+        onClick={() => props.setCharacters()}
+        to="/characters"
+      >
+        Characters
+      </NavLink>
+      <NavLink
+        activeStyle={{ color: "black" }}
+        onClick={() => props.setEpisodes()}
+        to="/episodes"
+      >
+        Episodes
+      </NavLink>
+      <NavLink activeStyle={{ color: "black" }} to="/locations">
+        Locations
+      </NavLink>
     </div>
   );
 };
 
-export default Nav;
+const mapDispatchToProps = (dispatch) => ({
+  setCharacters: () => dispatch(setCharactersThunk()),
+  setEpisodes: () => dispatch(setEpisodesThunk()),
+});
+
+export default connect(null, mapDispatchToProps)(Nav);

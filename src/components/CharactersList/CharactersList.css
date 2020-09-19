@@ -1,3 +1,17 @@
-ul {
+.CharactersList ul {
     list-style: none;
+    column-count: 2;
+    padding: 10px;
+    margin-top: 0;
 }
+
+.CharactersList {
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    margin-bottom: 10px;
+}
+

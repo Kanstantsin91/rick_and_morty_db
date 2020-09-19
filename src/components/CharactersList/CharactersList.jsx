@@ -1,48 +1,54 @@
-import React from "react";
-import Api /*{ApiFetch} */ from "../../API";
-import "./CharactersList.css";
-import Character from "../Character";
+import React from 'react';
+import './CharactersList.css';
+import Character from '../Character';
+import { connect } from 'react-redux';
+import Spinner from '../Spinner';
+import Paginator from '../Paginator';
 
-export default class CharactersList extends React.Component {
-  state = {
-    characters: [],
-  };
+class CharactersList extends React.Component {
 
-  rickMortyApi = new Api();
+    render() {
+        const { characters } = this.props;
 
-  // rickMortyApi = new ApiFetch();
+        const items = characters.map((item) => {
+            return (
+                <li key={item.id}>
+                    <Character
+                        name={item.name}
+                        img={item.image}
+                        status={item.status}
+                        species={item.species}
+                        gender={item.gender}
+                        currentLocation={item.location.name}
+                        firstEpisodeUrl={item.episode[0]}
+                        firstEpisodeName={item.firstEpisodeName}
+                        id={item.id}
+                    />
+                </li>
+            );
+        });
 
-  componentDidMount() {
-    this.rickMortyApi.getAllCharacters().then((data) =>
-      this.setState({
-        characters: data,
-      })
-    );
-  }
+        if(!characters.length) {
+            return <Spinner />
+        }
 
-  render() {
-    const { characters } = this.state;
-    const items = characters.map((el) => {
-      console.log(el);
-      return (
-        <li key={el.id}>
-          <Character
-            name={el.name}
-            gender={el.gender}
-            species={el.species}
-            status={el.status}
-            img={el.image}
-            currentLocation={el.location.name}
-            firstEpisodeUrl={el.episode[0]}
-          />
-        </li>
-      );
-    });
-    return (
-      <div className="CharactersList">
-        <h1>Characters</h1>
-        <ul>{items}</ul>
-      </div>
-    );
-  }
+        return (
+            <React.Fragment>
+            <div className="CharactersList">
+                <ul>
+                    {items}
+                </ul>
+            </div>
+             <Paginator/>
+             </React.Fragment>
+        );
+    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        characters: state.characters
+    }
+}
+
+export default connect(mapStateToProps)(CharactersList);

@@ -1,0 +1,9 @@
+.Paginator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Paginator button {
+    margin: 0 5px;
+}
